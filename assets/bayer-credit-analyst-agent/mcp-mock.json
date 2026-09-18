@@ -1,0 +1,400 @@
+{
+  "servers": {
+    "s4-credit-management": {
+      "mcp_server_name": "sap.s4/API_CRDTMBUSINESSPARTNER",
+      "description": "SAP S/4HANA Credit Management Master Data — credit accounts, limits, collateral, insurance, negative events",
+      "tools": {
+        "get_credit_management_account": {
+          "description": "Retrieve credit account by business partner and credit segment",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string", "description": "Business partner number" },
+              "CreditSegment": { "type": "string", "description": "Credit segment" }
+            },
+            "required": ["BusinessPartner", "CreditSegment"]
+          },
+          "mock_response": {
+            "BusinessPartner": "1000001",
+            "CreditSegment": "0001",
+            "CreditAccountIsBlocked": false,
+            "CreditAccountBlockReason": "",
+            "CreditAccountResubmissionDate": null,
+            "CreditLimitAmount": "250000.00",
+            "CreditLimitValidityEndDate": "/Date(1798761600000)/",
+            "CreditLimitLastChangeDate": "/Date(1717200000000)/",
+            "CreditLimitCalculatedAmount": "230000.00",
+            "CreditLimitIsZero": false,
+            "CreditLimitRequestedAmount": "270000.00",
+            "CreditLimitReqdValidityEndDate": "/Date(1830297600000)/",
+            "CreditLimitRequestDate": "/Date(1717200000000)/",
+            "CreditSegmentCurrency": "EUR",
+            "BusinessPartnerIsCritical": false
+          }
+        },
+        "get_credit_management_account_blocked": {
+          "description": "Retrieve credit account for a blocked business partner",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string" },
+              "CreditSegment": { "type": "string" }
+            },
+            "required": ["BusinessPartner", "CreditSegment"]
+          },
+          "mock_response": {
+            "BusinessPartner": "2000002",
+            "CreditSegment": "0001",
+            "CreditAccountIsBlocked": true,
+            "CreditAccountBlockReason": "01",
+            "CreditAccountResubmissionDate": "/Date(1735689600000)/",
+            "CreditLimitAmount": "50000.00",
+            "CreditLimitValidityEndDate": "/Date(1767225600000)/",
+            "CreditLimitLastChangeDate": "/Date(1706745600000)/",
+            "CreditLimitCalculatedAmount": "45000.00",
+            "CreditLimitIsZero": false,
+            "CreditLimitRequestedAmount": "55000.00",
+            "CreditSegmentCurrency": "EUR",
+            "BusinessPartnerIsCritical": true
+          }
+        },
+        "get_credit_management_business_partner": {
+          "description": "Retrieve credit management business partner risk profile",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string", "description": "Business partner number" }
+            },
+            "required": ["BusinessPartner"]
+          },
+          "mock_response": {
+            "BusinessPartner": "1000001",
+            "CrdtMgmtBusinessPartnerGroup": "0001",
+            "CreditWorthinessScoreValue": "320",
+            "CrdtWrthnssScoreValdtyEndDate": "/Date(1798761600000)/",
+            "CrdtWorthinessScoreLastChgDate": "/Date(1717200000000)/",
+            "CalcdCrdtWorthinessScoreValue": "315",
+            "CreditRiskClass": "02",
+            "CalculatedCreditRiskClass": "02",
+            "CreditRiskClassLastChangeDate": "/Date(1706745600000)/",
+            "CreditCheckRule": "SAP01",
+            "CreditScoreAndLimitCalcRule": "SAP01",
+            "CustBusinessRelshpStartYear": "2018"
+          }
+        },
+        "get_credit_account_collateral": {
+          "description": "Retrieve credit account collateral and insurance entries",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string" },
+              "CreditSegment": { "type": "string" }
+            },
+            "required": ["BusinessPartner", "CreditSegment"]
+          },
+          "mock_response": {
+            "results": [
+              {
+                "BusinessPartner": "1000001",
+                "CreditSegment": "0001",
+                "CrdtAcctInformationCategory": "01",
+                "CrdtAcctInformationType": "01",
+                "AddlCreditDocAmtInTransacCrcy": "25000.00",
+                "TransactionCurrency": "EUR",
+                "ValidityStartDate": "/Date(1704067200000)/",
+                "ValidityEndDate": "/Date(1798761600000)/",
+                "AdditionalCreditDocComment": "Bank guarantee from Deutsche Bank",
+                "ExceptionIsCreditCheckRelevant": true
+              }
+            ]
+          }
+        },
+        "get_bp_negative_events": {
+          "description": "Retrieve negative credit events for a business partner",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string" }
+            },
+            "required": ["BusinessPartner"]
+          },
+          "mock_response": {
+            "results": []
+          }
+        }
+      }
+    },
+    "s4-sales-credit-block": {
+      "mcp_server_name": "sap.s4/API_SLS_DOC_WITH_CREDIT_BLOCK",
+      "description": "SAP S/4HANA Sales Documents with Credit Block — read blocked orders",
+      "tools": {
+        "get_blocked_sales_documents": {
+          "description": "Retrieve credit-blocked sales documents for a sold-to party",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "SoldToParty": { "type": "string", "description": "Sold-to party number" },
+              "$top": { "type": "integer", "description": "Max results" }
+            },
+            "required": ["SoldToParty"]
+          },
+          "mock_response": {
+            "results": [
+              {
+                "SalesDocument": "0000012345",
+                "SDDocumentCategory": "C",
+                "SalesDocumentType": "OR",
+                "SalesOrganization": "1000",
+                "DistributionChannel": "10",
+                "OrganizationDivision": "00",
+                "CreatedByUser": "JMUELLER",
+                "CreationDate": "/Date(1733270400000)/",
+                "SoldToParty": "2000002",
+                "TotalNetAmount": "68500.00",
+                "TransactionCurrency": "EUR",
+                "CustomerCreditAccount": "2000002",
+                "ReleasedCreditAmount": "0.00",
+                "CreditBlockReleaseDate": null,
+                "TotalCreditCheckStatus": "B",
+                "CentralCreditCheckStatus": "B",
+                "OverallSDProcessStatus": "A"
+              }
+            ]
+          }
+        },
+        "get_blocked_sales_document_by_id": {
+          "description": "Retrieve a specific credit-blocked sales document by ID",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "SalesDocument": { "type": "string", "description": "Sales document number" }
+            },
+            "required": ["SalesDocument"]
+          },
+          "mock_response": {
+            "SalesDocument": "0000012345",
+            "SDDocumentCategory": "C",
+            "SalesDocumentType": "OR",
+            "SalesOrganization": "1000",
+            "SoldToParty": "2000002",
+            "TotalNetAmount": "68500.00",
+            "TransactionCurrency": "EUR",
+            "CustomerCreditAccount": "2000002",
+            "ReleasedCreditAmount": "0.00",
+            "TotalCreditCheckStatus": "B",
+            "CentralCreditCheckStatus": "B",
+            "OverallSDProcessStatus": "A"
+          }
+        }
+      }
+    },
+    "s4-business-partner": {
+      "mcp_server_name": "sap.s4/API_BUSINESS_PARTNER",
+      "description": "SAP S/4HANA Business Partner — risk profile, payment terms, creditworthiness",
+      "tools": {
+        "get_business_partner_risk_profile": {
+          "description": "Retrieve business partner general data and creditworthiness",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string", "description": "Business partner number" }
+            },
+            "required": ["BusinessPartner"]
+          },
+          "mock_response": {
+            "BusinessPartner": "1000001",
+            "Customer": "CU10000001",
+            "BusinessPartnerFullName": "Agro Solutions GmbH",
+            "BusinessPartnerIsBlocked": false,
+            "Industry": "0600",
+            "CreditWorthiness": {
+              "BusPartCreditStanding": "B",
+              "BPCreditStandingStatus": "A",
+              "BPCreditStandingDate": "/Date(1717200000000)/",
+              "BPCreditStandingRating": "BB+",
+              "BPLegalProceedingStatus": "00",
+              "BusinessPartnerIsUnderOath": false,
+              "BusinessPartnerIsBankrupt": false
+            }
+          }
+        },
+        "get_business_partner_payment_terms": {
+          "description": "Retrieve customer company payment terms",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "Customer": { "type": "string", "description": "Customer number" },
+              "CompanyCode": { "type": "string", "description": "Company code" }
+            },
+            "required": ["Customer", "CompanyCode"]
+          },
+          "mock_response": {
+            "Customer": "CU10000001",
+            "CompanyCode": "1000",
+            "PaymentTerms": "ZB30",
+            "ReconciliationAccount": "140000",
+            "AccountingClerk": "01",
+            "PaymentMethodsList": "T",
+            "PaymentBlockingReason": ""
+          }
+        },
+        "get_customer_sales_area_payment_terms": {
+          "description": "Retrieve customer sales area payment terms",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "Customer": { "type": "string" },
+              "SalesOrganization": { "type": "string" },
+              "DistributionChannel": { "type": "string" },
+              "Division": { "type": "string" }
+            },
+            "required": ["Customer", "SalesOrganization", "DistributionChannel", "Division"]
+          },
+          "mock_response": {
+            "Customer": "CU10000001",
+            "SalesOrganization": "1000",
+            "DistributionChannel": "10",
+            "Division": "00",
+            "CustomerPaymentTerms": "ZB30",
+            "CreditControlArea": "A000",
+            "Currency": "EUR",
+            "CustomerABCClassification": "A"
+          }
+        }
+      }
+    },
+    "s4-creditworthiness": {
+      "mcp_server_name": "sap.s4/CREDITWORTHINESSQUERY_IN",
+      "description": "SAP S/4HANA Creditworthiness — external D&B data integration",
+      "tools": {
+        "get_creditworthiness": {
+          "description": "Retrieve external creditworthiness data (D&B) for a business partner",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": { "type": "string", "description": "Business partner number" }
+            },
+            "required": ["BusinessPartner"]
+          },
+          "mock_response": {
+            "BusinessPartner": "1000001",
+            "BusPartCreditStanding": "B",
+            "BPCreditStandingStatus": "A",
+            "BPCreditStandingDate": "/Date(1722470400000)/",
+            "BPCreditStandingRating": "BB+",
+            "BPCreditStandingComment": "Stable outlook, timely payments observed",
+            "BPLegalProceedingStatus": "00",
+            "BusinessPartnerIsUnderOath": false,
+            "BusinessPartnerIsBankrupt": false,
+            "BPForeclosureIsInitiated": false
+          }
+        }
+      }
+    },
+    "ask-services": {
+      "mcp_server_name": "ask-services-rest-api-r2.cfapps.eu10-004.hana.ondemand.com/mcp-server/mcp",
+      "description": "SAP Ask Services — listing, keywords, RAG search, pricing queries",
+      "tools": {
+        "tool_listing_query": {
+          "description": "Query listing data using tabular agent.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": { "type": "string", "description": "Natural language query for listing data" }
+            },
+            "required": ["query"]
+          },
+          "mock_response": {
+            "results": [
+              { "service_number": "S4HANA-001", "service_name": "SAP S/4HANA Cloud", "category": "ERP" }
+            ],
+            "total": 1
+          }
+        },
+        "tool_keywords_query": {
+          "description": "Query keywords data using tabular agent.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": { "type": "string", "description": "Keywords to search for" }
+            },
+            "required": ["query"]
+          },
+          "mock_response": {
+            "keywords": ["credit management", "accounts receivable", "bill-to-cash"],
+            "matches": 3
+          }
+        },
+        "tool_rag_search": {
+          "description": "Search using RAG agent.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": { "type": "string", "description": "Semantic search query" }
+            },
+            "required": ["query"]
+          },
+          "mock_response": {
+            "results": [
+              {
+                "title": "Credit Management in SAP S/4HANA",
+                "excerpt": "SAP Credit Management provides tools to assess customer creditworthiness...",
+                "score": 0.92
+              }
+            ]
+          }
+        },
+        "tool_all_query": {
+          "description": "Query all data using tabular agent.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": { "type": "string" }
+            },
+            "required": ["query"]
+          },
+          "mock_response": {
+            "service_number": "S4HANA-001",
+            "service_name": "SAP S/4HANA Cloud",
+            "results": []
+          }
+        },
+        "tool_pricing_query": {
+          "description": "Query pricing data using tabular agent.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": { "type": "string" },
+              "service_number": { "type": "string" },
+              "service_name": { "type": "string" }
+            },
+            "required": ["query"]
+          },
+          "mock_response": {
+            "service_number": "S4HANA-001",
+            "pricing_model": "subscription",
+            "currency": "EUR",
+            "price_per_user": "150.00"
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "bayer-credit-analyst-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 5,
+    "total_tools": 15,
+    "generated_from": [
+      "API_CRDTMBUSINESSPARTNER (OData EDMX)",
+      "API_SLS_DOC_WITH_CREDIT_BLOCK (OData EDMX)",
+      "API_BUSINESS_PARTNER (OData EDMX)",
+      "CREDITWORTHINESSQUERY_IN (SOAP)",
+      "ask-services MCP (live)"
+    ],
+    "generation_date": "2026-09-18",
+    "notes": "ical-mcp-server and ekx-mcp-server require OAuth tokens (not yet available). hub.joule.only.sap not reachable from this environment."
+  }
+}
