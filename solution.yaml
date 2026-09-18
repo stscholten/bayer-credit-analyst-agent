@@ -1,0 +1,10 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: credit-analyst-8383e
+  version: "1.0.0"
+  description: Bayer Credit Analyst Agent for Bill-to-Cash Credit Management.
+
+assets:
+  - ref: ./assets/bayer-credit-analyst-agent/asset.yaml
