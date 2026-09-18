@@ -1,0 +1,482 @@
+{
+  "summary": {
+    "total": 90,
+    "passed": 90,
+    "failed": 0,
+    "score": 100.0
+  },
+  "sections": [
+    {
+      "name": "Structure Tests",
+      "marker": "structure",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "score": 100.0,
+      "tests": [
+        {
+          "name": "Structure: all required files exist",
+          "outcome": "passed",
+          "duration": 0.0001
+        },
+        {
+          "name": "Structure: 7 runtime skills",
+          "outcome": "passed",
+          "duration": 0.0002
+        },
+        {
+          "name": "Structure: 9 agent decorators",
+          "outcome": "passed",
+          "duration": 0.0001
+        },
+        {
+          "name": "Schema: asset.yaml valid",
+          "outcome": "passed",
+          "duration": 0.0515
+        },
+        {
+          "name": "Schema: solution.yaml valid",
+          "outcome": "passed",
+          "duration": 0.0005
+        },
+        {
+          "name": "Schema: mcp-mock.json ≥4 servers ≥10 tools",
+          "outcome": "passed",
+          "duration": 0.0002
+        },
+        {
+          "name": "Schema: Dockerfile valid",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Agent: system prompt has T1-T5 + guardrails + READ-ONLY",
+          "outcome": "passed",
+          "duration": 0.0002
+        }
+      ]
+    },
+    {
+      "name": "Agent Tests",
+      "marker": "agent_tests",
+      "total": 82,
+      "passed": 82,
+      "failed": 0,
+      "skipped": 0,
+      "score": 100.0,
+      "tests": [
+        {
+          "name": "G5: fresh data not stale",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G5: stale >90 days",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G5: exactly 90 days = not stale",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G5: None date is stale",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G5: invalid date is stale",
+          "outcome": "passed",
+          "duration": 0.0001
+        },
+        {
+          "name": "G5: OData /Date() format",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: normal utilization",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: over limit",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: zero limit → None",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: None limit → None",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: None exposure → None",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: zero exposure",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: rounds to 2 decimals",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: tier GREEN at 50%",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: tier GREEN at 70%",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: tier AMBER at 71%",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: tier AMBER at 90%",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: tier RED at 91%",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T2: tier UNKNOWN for None",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: RC01+AAA+clean = 100",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: RC04+CCC+blocked+events = 0",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: RC02+BBB+clean = 70",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: overdue block deducts points",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: negative events deduct points",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: score capped at 100",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: score floor at 0",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: ELIGIBLE at 70",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: ELIGIBLE at 100",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: CONDITIONAL at 50",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: CONDITIONAL at 69",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: NOT ELIGIBLE at 49",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T5: NOT ELIGIBLE at 0",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T1: code 01 = credit limit exceeded",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T1: code 09 = overdue",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T1: unknown code fallback",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T1: None → unknown",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T1: all 10 block codes present",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G3: approved instruments pass",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G3: non-approved instruments fail",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G3: None instrument fails",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G3: case-insensitive check",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: RC01+30d = COMPLIANT",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: RC02+60d = MISMATCH",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: RC02+41d = BORDERLINE",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: RC04+1d = MISMATCH",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: RC04+0d = COMPLIANT or BORDERLINE",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: None days = UNKNOWN",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: None risk class = UNKNOWN",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "T4: result includes policy field",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: _emit achieved",
+          "outcome": "passed",
+          "duration": 0.0001
+        },
+        {
+          "name": "Instr: _emit missed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: guardrail triggered",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: guardrail passed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M1 achieved",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M1 missed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M2 achieved",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M2 missed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M3 achieved",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M3 missed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M4 achieved",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M4 missed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M5 achieved",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Instr: M5 missed",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G4: overdue block makes RC02 ineligible",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G4: clean RC01 is eligible",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G5: 10-day data passes",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G5: 91-day data fails",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "G8: all block descriptions sufficient",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "ESK: Tier1 GREEN condition",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "ESK: Tier2 AMBER condition",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "ESK: payment mismatch triggers Tier2",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "ESK: NOT ELIGIBLE triggers escalation",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T1 kreditblock output",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T2 trm utilization output",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T3 approved instrument",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T3 rejected instrument",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T4 payment term result",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T4 mismatch scenario",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T5 eligibility BP1000001",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: T5 not eligible BP2000002",
+          "outcome": "passed",
+          "duration": 0.0
+        },
+        {
+          "name": "Demo: escalation model all tiers",
+          "outcome": "passed",
+          "duration": 0.0001
+        },
+        {
+          "name": "Agent: system prompt has T1-T5 + guardrails + READ-ONLY",
+          "outcome": "passed",
+          "duration": 0.0002
+        }
+      ]
+    }
+  ]
+}
