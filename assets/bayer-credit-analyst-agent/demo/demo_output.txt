@@ -1,0 +1,425 @@
+BAYER CREDIT ANALYST AGENT — Demo-Ausgabe (alle 10 Fragen)
+
+════════════════════════════════════════════════════════════════════════
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 1 | T1 — Kreditblock-Erklärung
+
+Frage: Warum ist Business Partner 2000002 (Agro Solutions) gesperrt und welche Aufträge sind betroffen?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T1 KREDITBLOCK-ERKLÄRUNG  |  Kreditblock-Analyse — Business Partner 2000002
+════════════════════════════════════════════════════════════════════════
+
+  KUNDENPROFIL
+  ├─ Business Partner:     2000002
+  ├─ Kreditlimit:          50,000.00 EUR
+  ├─ Risikoklasse:         04
+  ├─ Bonitätsscore:        180
+  └─ Status:               ⛔ GESPERRT
+
+  BLOCKIERUNGSURSACHE
+  ├─ Code:                 01
+  └─ Erklärung:            Credit limit exceeded — outstanding receivables exceed the approved credit limit
+
+  BETROFFENE AUFTRÄGE
+  ├─ Anzahl gesperrter Aufträge:     1
+  └─ Gesamtwert gesperrter Aufträge: 68,500.00 EUR
+
+  KREDITAUSLASTUNG
+  ├─ Berechnetes Limit:    45,000.00 EUR
+  ├─ Auslastung:           90.0%
+  └─ Ampelstatus:          🟡 AMBER
+
+  NEGATIVE EREIGNISSE:     2 Einträge
+
+  EMPFEHLUNG
+  ├─ Der Kreditblock wurde durch Überschreitung des Kreditlimits ausgelöst.
+  ├─ Die Auslastung von 90.0% übersteigt das genehmigte Limit.
+  ├─ Empfohlen: Überprüfung durch den Credit Manager (Tier 2).
+  └─ Mögliche Maßnahmen: Anzahlung, Sicherheitenerhöhung oder Limitanpassung.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 2 — Credit Manager
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G2 Limitcheck  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 2 | T2 — TRM Utilization — Grüner Bereich
+
+Frage: Wie hoch ist die Kreditlimit-Auslastung von BP 1000001 und welche Treasury-Sicherheiten sind hinterlegt?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T2 TRM UTILIZATION  |  TRM Kreditlimit-Auslastung — Business Partner 1000001
+════════════════════════════════════════════════════════════════════════
+
+  KREDITLIMIT-ÜBERSICHT
+  ├─ Genehmigtes Limit:    250,000.00 EUR
+  ├─ Berechnete Nutzung:   230,000.00 EUR
+  ├─ Beantragt:            270,000.00 EUR
+  ├─ Auslastung:           92.0%
+  └─ TRM-Ampelstatus:      🔴  ROT — Eskalation erforderlich
+
+  TREASURY / SICHERHEITEN
+  ├─ Hinterlegte Sicherheiten: 25,000.00 EUR
+  └─ Beschreibung:             Bank guarantee from Deutsche Bank
+
+  RISIKOKLASSE:  02  (Skala 01=sehr gut … 04=kritisch)
+
+  BEWERTUNG
+  ├─ Auslastung 92.0% liegt ÜBER der AMBER-Schwelle von 70%.
+  ├─ Sicherheiten decken 10.0% des genehmigten Limits ab.
+  └─ Präventive Limiterhöhung oder Sicherheitenstärkung wird empfohlen.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 2 — Credit Manager
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G2 Limitcheck  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 3 | T2 — TRM Utilization — Amber-Bereich
+
+Frage: BP 2000002 hat eine hohe Auslastung — bitte TRM-Bewertung mit Risikoampel erstellen.
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T2 TRM UTILIZATION  |  TRM Kreditlimit-Auslastung — Business Partner 2000002
+════════════════════════════════════════════════════════════════════════
+
+  KREDITLIMIT-ÜBERSICHT
+  ├─ Genehmigtes Limit:    50,000.00 EUR
+  ├─ Berechnete Nutzung:   45,000.00 EUR
+  ├─ Beantragt:            55,000.00 EUR
+  ├─ Auslastung:           90.0%
+  └─ TRM-Ampelstatus:      🟡  AMBER — erhöhte Aufmerksamkeit
+
+  TREASURY / SICHERHEITEN
+  ├─ Hinterlegte Sicherheiten: 25,000.00 EUR
+  └─ Beschreibung:             Bank guarantee from Deutsche Bank
+
+  RISIKOKLASSE:  04  (Skala 01=sehr gut … 04=kritisch)
+
+  BEWERTUNG
+  ├─ Auslastung 90.0% liegt ÜBER der AMBER-Schwelle von 70%.
+  ├─ Sicherheiten decken 50.0% des genehmigten Limits ab.
+  └─ Präventive Limiterhöhung oder Sicherheitenstärkung wird empfohlen.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 2 — Credit Manager
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G2 Limitcheck  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 4 | T3 — DCD — Genehmigtes Instrument
+
+Frage: Kunde 1000001 möchte ein Akkreditiv (Letter of Credit) hinterlegen — ist das zulässig?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T3 DCD DECISION SUPPORT  |  DCD Entscheidungsunterstützung — BP 1000001 | Instrument: irrevocable letter of credit
+════════════════════════════════════════════════════════════════════════
+
+  GESCHÄFTSPARTNER-PROFIL
+  ├─ Business Partner:     1000001
+  ├─ Risikoklasse:         02
+  ├─ Bonitätsscore:        320
+  ├─ D&B Rating:           BB+
+  └─ D&B Kommentar:        Stable outlook, timely payments observed
+
+  DOKUMENTARISCHES INSTRUMENT
+  ├─ Gewünschtes Instrument: irrevocable letter of credit
+  ├─ Zulässigkeit (G3):    ✅ GENEHMIGT — auf der Positivliste
+  └─ Vorhandene Sicherheit: Bank guarantee from Deutsche Bank
+
+  RISIKOPRÜFUNG
+  ├─ Insolvenz:            ✅ Nein
+  ├─ Gerichtsverfahren:    ✅ Nein
+  └─ Kreditlimit:          250,000.00 EUR
+
+  EMPFEHLUNG
+  ├─ ✅ Instrument genehmigt. Beantragung kann fortgesetzt werden.
+  ├─ Risikoklasse 02 erfordert Standard-Dokumentationssorgfalt.
+  └─ Credit Manager (Tier 2) kann Genehmigung erteilen.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 2 — Credit Manager
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G3 DCD-Instrument  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 5 | T3 — DCD — Nicht genehmigtes Instrument
+
+Frage: Ein Kunde schlägt einen 'Personal Cheque' als DCD-Instrument vor — ist das gemäß Bayer-Richtlinie zulässig?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T3 DCD DECISION SUPPORT  |  DCD Entscheidungsunterstützung — BP 1000001 | Instrument: personal cheque
+════════════════════════════════════════════════════════════════════════
+
+  GESCHÄFTSPARTNER-PROFIL
+  ├─ Business Partner:     1000001
+  ├─ Risikoklasse:         02
+  ├─ Bonitätsscore:        320
+  ├─ D&B Rating:           BB+
+  └─ D&B Kommentar:        Stable outlook, timely payments observed
+
+  DOKUMENTARISCHES INSTRUMENT
+  ├─ Gewünschtes Instrument: personal cheque
+  ├─ Zulässigkeit (G3):    ⛔ ABGELEHNT — nicht auf der genehmigten Instrumentenliste
+  └─ Vorhandene Sicherheit: Bank guarantee from Deutsche Bank
+
+  RISIKOPRÜFUNG
+  ├─ Insolvenz:            ✅ Nein
+  ├─ Gerichtsverfahren:    ✅ Nein
+  └─ Kreditlimit:          250,000.00 EUR
+
+  EMPFEHLUNG
+  ├─ ⛔ Instrument nicht genehmigt — Verwendung abgelehnt (Guardrail G3).
+  ├─ Risikoklasse 02 erfordert Standard-Dokumentationssorgfalt.
+  └─ Credit Manager (Tier 2) kann Genehmigung erteilen.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 2 — Credit Manager
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G3 DCD-Instrument  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 6 | T4 — Payment Term Validation — Compliant
+
+Frage: Welche Zahlungsbedingungen hat Kunde CU10000001 vereinbart und sind diese konform mit seiner Risikoklasse?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T4 PAYMENT TERM VALIDATION  |  Zahlungsbedingungen-Validierung — Kunde CU10000001
+════════════════════════════════════════════════════════════════════════
+
+  KUNDENPROFIL
+  ├─ Kundennummer:         CU10000001
+  ├─ Risikoklasse:         02
+  ├─ Bonitätsscore:        320
+  └─ Policy-Grenze:        Net 45 or better
+
+  VEREINBARTE ZAHLUNGSBEDINGUNG
+  ├─ Zahlungsbedingungscode:  ZB30
+  └─ Zahlungsziel (Tage):     30 Tage
+
+  VALIDIERUNGSERGEBNIS
+  ├─ Status:               ✅  COMPLIANT
+  ├─ Begründung:           Agreed terms of 30 days are within policy for risk class 02
+  └─ Policy:               Net 45 or better
+
+  EMPFEHLUNG
+  ├─ ✅ Zahlungsbedingung entspricht der Risikopolitik. Keine Maßnahme erforderlich.
+  
+  
+  └─ Ergebnis basiert auf S/4HANA: CreditRiskClass, CustomerPaymentTerms.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 1 — Analyst
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 7 | T4 — Payment Term Validation — Mismatch
+
+Frage: Kunde CU10000001 (Risikoklasse 04 — kritisch) möchte 60 Tage Zahlungsziel — ist das policy-konform?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T4 PAYMENT TERM VALIDATION  |  Zahlungsbedingungen-Validierung — Kunde CU10000001 [MISMATCH-SZENARIO]
+════════════════════════════════════════════════════════════════════════
+
+  KUNDENPROFIL (simuliert: Risikoklasse 04)
+  ├─ Kundennummer:         CU10000001
+  ├─ Risikoklasse:         04  (KRITISCH)
+  └─ Policy-Grenze:        Advance payment only
+
+  BEANTRAGTE ZAHLUNGSBEDINGUNG
+  ├─ Zahlungsbedingungscode:  ZB60
+  └─ Zahlungsziel (Tage):     60 Tage
+
+  VALIDIERUNGSERGEBNIS
+  ├─ Status:               ⛔  MISMATCH
+  ├─ Begründung:           Risk class 04 requires advance payment only, but credit terms of 60 days are agreed
+  └─ Policy:               Advance payment only
+
+  EMPFEHLUNG
+  ├─ ⛔ Zahlungsziel von 60 Tagen ist für Risikoklasse 04 nicht zulässig.
+  ├─ Policy verlangt ausschließlich Vorauszahlung für kritische Kunden.
+  ├─ Eskalation zu Credit Manager (Tier 2) oder Ablehnung des Antrags.
+  └─ Ergebnis basiert auf S/4HANA: CreditRiskClass, CustomerPaymentTerms.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 2 — Credit Manager
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G2 Limitcheck  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 8 | T5 — Seasonal Financing — Eligible
+
+Frage: Ist Business Partner 1000001 für das saisonale Frühjahrs-Finanzierungsprogramm 2025 geeignet?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T5 SEASONAL FINANCING ELIGIBILITY  |  Saisonale Finanzierungs-Eignung — Business Partner 1000001
+════════════════════════════════════════════════════════════════════════
+
+  KUNDENPROFIL
+  ├─ Business Partner:     1000001
+  ├─ Risikoklasse:         02
+  ├─ Kreditkonto gesperrt: Nein ✅
+  └─ Negative Ereignisse:  0
+
+  D&B BONITÄTSDATEN (Guardrail G5)
+  ├─ Rating:               BB+
+  ├─ Kommentar:            Stable outlook, timely payments observed
+  ├─ Datenalter:           778 Tage
+  └─ Datenstatus:          ⛔ VERALTET (>90 Tage) — G5 ausgelöst
+
+  SCORING
+  ├─ Gesamtscore:          35 / 100
+  └─ Entscheidung:         ⛔  NOT ELIGIBLE
+
+  SCOREBEITRÄGE
+  ├─ Risikoklasse 02:   25 Pkt (Gut)
+  ├─ D&B Rating BB+:        30 Pkt
+  ├─ Kreditblock:           +20 Pkt (kein Block)
+  └─ Negative Ereignisse:  + 10 Pkt (keine)
+
+  EMPFEHLUNG
+  
+  
+  ├─ ⛔ Nicht geeignet. Guardrail G4/G5 verhindert Freigabe.
+  └─ Entscheidungsgrundlage: CreditRiskClass, BPCreditStandingRating, CreditAccountIsBlocked.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 3 — Credit Committee
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G4 Überrückstand  ✅ G5 D&B-Alter  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 9 | T5 — Seasonal Financing — Not Eligible
+
+Frage: Business Partner 2000002 (gesperrt, Risikoklasse 04) beantragt saisonale Finanzierung — was empfiehlt der Agent?
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 T5 SEASONAL FINANCING ELIGIBILITY  |  Saisonale Finanzierungs-Eignung — Business Partner 2000002
+════════════════════════════════════════════════════════════════════════
+
+  KUNDENPROFIL
+  ├─ Business Partner:     2000002
+  ├─ Risikoklasse:         04
+  ├─ Kreditkonto gesperrt: Ja ⛔
+  └─ Negative Ereignisse:  2
+
+  D&B BONITÄTSDATEN (Guardrail G5)
+  ├─ Rating:               CCC
+  ├─ Kommentar:            High default risk — multiple overdue items
+  ├─ Datenalter:           960 Tage
+  └─ Datenstatus:          ⛔ VERALTET (>90 Tage) — G5 ausgelöst
+
+  SCORING
+  ├─ Gesamtscore:          0 / 100
+  └─ Entscheidung:         ⛔  NOT ELIGIBLE
+
+  SCOREBEITRÄGE
+  ├─ Risikoklasse 04:   -20 Pkt (Kritisch)
+  ├─ D&B Rating CCC:        -20 Pkt
+  ├─ Kreditblock:           −30 Pkt (gesperrt)
+  └─ Negative Ereignisse:  −40 Pkt (2 Ereignisse)
+
+  EMPFEHLUNG
+  
+  
+  ├─ ⛔ Nicht geeignet. Guardrail G4/G5 verhindert Freigabe.
+  └─ Entscheidungsgrundlage: CreditRiskClass, BPCreditStandingRating, CreditAccountIsBlocked.
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 3 — Credit Committee
+  Guardrails geprüft: ✅ G1 Read-Only  ✅ G4 Überrückstand  ✅ G5 D&B-Alter  ✅ G8 Datenevidenz
+────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────
+FRAGE 10 | ESK — Eskalationsmodell & 8 Guardrails
+
+Frage: Erkläre das dreistufige Eskalationsmodell und die acht Guardrails des Bayer Credit Analyst Agenten.
+
+
+
+════════════════════════════════════════════════════════════════════════
+  🔍 ESKALATIONSMODELL  |  Dreistufiges Eskalationsmodell & 8 Guardrails — Übersicht
+════════════════════════════════════════════════════════════════════════
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  TIER 1 — Credit Analyst (Standardfall)                             │
+  │  Auslöser: Routineanalyse, Auslastung <70%, Konfidenz >70%          │
+  │  Maßnahmen: Analyse, Empfehlung, Dokumentation                      │
+  │  Beispiel: T4 COMPLIANT für Risikoklasse 02, T5 ELIGIBLE            │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  TIER 2 — Credit Manager (Mittleres Risiko)                         │
+  │  Auslöser: Auslastung 70–90%, Konfidenz <70%, Kreditblock           │
+  │  Maßnahmen: Genehmigung, Limitanpassung, Sicherheitenverhandlung    │
+  │  Beispiel: T1 Kreditblock BP 2000002, T2 AMBER, T4 MISMATCH        │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  TIER 3 — Credit Committee (Hohes Risiko / Ausnahme)                │
+  │  Auslöser: Exposition >Segmentlimit, Insolvenz, D&B-Alert           │
+  │  Maßnahmen: Komitee-Entscheid, Policy-Ausnahme, Kontosperrung       │
+  │  Beispiel: T5 NOT ELIGIBLE + D&B veraltet, T3 Insolvenzrisiko       │
+  └──────────────────────────────────────────────────────────────────────┘
+
+  8 AKTIVE GUARDRAILS
+  ├─ G1 READ-ONLY:      Kein Write-Back in SAP-Systeme — nur Empfehlung
+  ├─ G2 LIMITCHECK:     Kein Limit überschreiten ohne Eskalation
+  ├─ G3 DCD-INSTRUMENT: Nur genehmigte Instrumente (LC, Bankgarantie ...)
+  ├─ G4 ÜBERRÜCKSTAND:  Keine Saisonfinanzierung bei überfälligen Kunden
+  ├─ G5 D&B-ALTER:      D&B-Daten müssen <90 Tage alt sein (T5)
+  ├─ G6 KONFIDENZ:      Konfidenz <70% → automatisch Tier 2
+  ├─ G7 DATENSCHUTZ:    Keine kundenseitige Datenweitergabe an Dritte
+  └─ G8 EVIDENZ:        Jede Empfehlung braucht ≥1 S/4HANA-Datenfeld
+
+
+────────────────────────────────────────────────────────────────────────
+  Eskalationsstufe: Tier 1–3 kontextabhängig
+  Guardrails geprüft: ✅ G1  ✅ G2  ✅ G3  ✅ G4  ✅ G5  ✅ G6  ✅ G7  ✅ G8
+────────────────────────────────────────────────────────────────────────
+
